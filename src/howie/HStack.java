@@ -4,7 +4,7 @@ package howie;
  * The {@code HStack} class represents a stack data structure that allows
  * pushing and popping of elements using Last-In-First-Out (LIFO) logic.
  *
- * @param <T> the type of elements held in this stack
+ * @param <T> the type of objects held in this stack
  * @author Howie Hertzberg
  */
 public final class HStack<T> {
@@ -31,13 +31,13 @@ public final class HStack<T> {
     /**
      * Attempts to push an item onto the stack.
      *
-     * @param item the element to add
-     * @throws IllegalArgumentException if the specified element is null
-     * @throws IllegalStateException    if the stack is full
+     * @param item the object to push
+     * @throws IllegalArgumentException if the specified object is null
+     * @throws IllegalStateException if the stack is full
      */
     public void push(T item) {
         if (item == null) {
-            throw new IllegalArgumentException("Item cannot be null.");
+            throw new IllegalArgumentException("Object cannot be null.");
         }
         if (isFull()) {
             throw new IllegalStateException("Stack is full.");
@@ -62,10 +62,10 @@ public final class HStack<T> {
     }
 
     /**
-     * Attempts to retrieve the top element from the stack without removing it.
+     * Attempts to retrieve the top element from the stack.
      *
-     * @return the top element of this stack
-     * @throws IllegalStateException if the queue is empty
+     * @return the top element of the stack
+     * @throws IllegalStateException if the stack is empty
      */
     @SuppressWarnings("unchecked")
     public T peek() {

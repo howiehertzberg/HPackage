@@ -2,9 +2,9 @@ package howie;
 
 /**
  * The {@code HQueue} class represents a circular queue data structure that allows
- * enqueueing and dequeueing of elements using First-In-First-Out (FIFO) logic.
+ * enqueueing and dequeueing of objects using First-In-First-Out (FIFO) logic.
  *
- * @param <T> the type of elements held in this queue
+ * @param <T> the type of objects held in the queue
  * @author Howie Hertzberg
  */
 public final class HQueue<T> {
@@ -29,15 +29,15 @@ public final class HQueue<T> {
     }
 
     /**
-     * Attempts to enqueue an item to the queue.
+     * Attempts to enqueue an object to the queue.
      *
-     * @param item the element to add
-     * @throws IllegalArgumentException if the specified element is null
+     * @param item the object to enqueue
+     * @throws IllegalArgumentException if the specified object is null
      * @throws IllegalStateException if the queue is full
      */
     public void enqueue(T item) {
         if (item == null) {
-            throw new IllegalArgumentException("Item cannot be null.");
+            throw new IllegalArgumentException("Object cannot be null.");
         }
         if (isFull()) {
             throw new IllegalStateException("Queue is full.");
@@ -47,9 +47,9 @@ public final class HQueue<T> {
     }
 
     /**
-     * Attempts to dequeue an item from the queue.
+     * Attempts to dequeue an element from the queue.
      *
-     * @return the dequeued item
+     * @return the dequeued element
      * @throws IllegalStateException if the queue is empty
      */
     @SuppressWarnings("unchecked")
@@ -66,7 +66,7 @@ public final class HQueue<T> {
     /**
      * Attempts to retrieve the top element from the queue.
      *
-     * @return the head of this queue
+     * @return the top element of the queue
      * @throws IllegalStateException if the queue is empty
      */
     @SuppressWarnings("unchecked")
